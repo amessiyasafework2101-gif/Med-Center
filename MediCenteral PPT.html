@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PharmaCare — 7 Slide Presentation</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background: #0f1729; color: #1e293b; overflow: hidden; }
+    .deck { height: 100vh; position: relative; }
+    .slide {
+      position: absolute; inset: 0; padding: 4rem 5rem;
+      background: linear-gradient(145deg, #f0fdfa 0%, #fff 40%, #f8fafc 100%);
+      display: none; flex-direction: column; justify-content: center;
+      opacity: 0; transition: opacity 0.35s ease;
+    }
+    .slide.active { display: flex; opacity: 1; }
+    .slide h1 { font-size: 2.75rem; color: #0f1729; margin-bottom: 0.5rem; }
+    .slide h2 { font-size: 1.25rem; color: #0d9488; font-weight: 600; margin-bottom: 2rem; }
+    .slide ul { list-style: none; max-width: 52rem; }
+    .slide li {
+      font-size: 1.35rem; line-height: 1.6; margin-bottom: 1rem; padding-left: 1.5rem;
+      position: relative; color: #475569;
+    }
+    .slide li::before {
+      content: ''; position: absolute; left: 0; top: 0.55rem;
+      width: 8px; height: 8px; background: #0d9488; border-radius: 50%;
+    }
+    .slide.title-slide { text-align: center; align-items: center; }
+    .slide.title-slide h1 { font-size: 3.5rem; }
+    .slide.title-slide .tagline { font-size: 1.5rem; color: #0d9488; margin-bottom: 2rem; }
+    .slide .footer { position: absolute; bottom: 2rem; left: 5rem; font-size: 0.9rem; color: #94a3b8; }
+    .nav {
+      position: fixed; bottom: 1.5rem; right: 2rem; z-index: 10;
+      display: flex; gap: 0.5rem; align-items: center;
+    }
+    .nav button {
+      background: #0d9488; color: white; border: none; padding: 0.6rem 1.2rem;
+      border-radius: 8px; cursor: pointer; font-size: 0.95rem;
+    }
+    .nav button:hover { background: #0f766e; }
+    .nav span { color: #94a3b8; font-size: 0.9rem; min-width: 4rem; text-align: center; }
+    .bar { position: absolute; top: 0; left: 0; right: 0; height: 6px; background: #0d9488; }
+  </style>
+</head>
+<body>
+  <div class="deck" id="deck">
+    <section class="slide title-slide active" data-n="1">
+      <h1>PharmaCare</h1>
+      <p class="tagline">Secure Pharmacy Management Platform</p>
+      <ul style="text-align:left">
+        <li>Multi-role SaaS for patients, pharmacies &amp; administrators</li>
+        <li>Vanilla HTML, CSS &amp; JavaScript</li>
+        <li>Firebase + Cloudinary + AI assistant (Dr. Aklilu)</li>
+      </ul>
+      <p class="footer">Project Overview | Slide 1 of 7</p>
+    </section>
+
+    <section class="slide" data-n="2">
+      <div class="bar"></div>
+      <h1>The Problem</h1>
+      <h2>Why PharmaCare?</h2>
+      <ul>
+        <li>Patients need a trusted way to submit doctor results and order medicines safely</li>
+        <li>Pharmacies must verify licenses, staff CVs, and authentic prescriptions</li>
+        <li>Paper workflows are slow, error-prone, and difficult to audit</li>
+        <li>PharmaCare digitizes registration, approval, verification, and payments</li>
+      </ul>
+    </section>
+
+    <section class="slide" data-n="3">
+      <div class="bar"></div>
+      <h1>Four User Roles</h1>
+      <h2>Role-based secure portals</h2>
+      <ul>
+        <li><strong>Patient</strong> — submit results, view recommendations, order medicines</li>
+        <li><strong>Pharmacy Owner</strong> — register pharmacy, approve pharmacist CVs, inventory</li>
+        <li><strong>Pharmacist</strong> — verify doctor papers, payments, point-of-sale (New Sale)</li>
+        <li><strong>Admin</strong> — approve pharmacy licenses, oversee platform data</li>
+      </ul>
+    </section>
+
+    <section class="slide" data-n="4">
+      <div class="bar"></div>
+      <h1>Registration &amp; Approval Flow</h1>
+      <h2>Trust at every step</h2>
+      <ul>
+        <li>Pharmacy owner registers → uploads license → <strong>admin approves</strong></li>
+        <li>Pharmacist applies to selected pharmacy → <strong>owner approves CV</strong></li>
+        <li>Patient submits doctor result paper to an approved pharmacy</li>
+        <li>Pharmacist verifies authentic result → patient can order medicines</li>
+      </ul>
+    </section>
+
+    <section class="slide" data-n="5">
+      <div class="bar"></div>
+      <h1>Key Features</h1>
+      <h2>Built for real pharmacy operations</h2>
+      <ul>
+        <li><strong>Dr. Aklilu</strong> — AI assistant for medicine doses, pain &amp; symptoms</li>
+        <li><strong>Payment proof</strong> — external pay + screenshot/ID → pharmacist approval</li>
+        <li><strong>Pharmacy bill</strong> — issued to patient after order approval</li>
+        <li>Inventory, POS, orders dashboard, dark mode, responsive UI</li>
+      </ul>
+    </section>
+
+    <section class="slide" data-n="6">
+      <div class="bar"></div>
+      <h1>Technology Stack</h1>
+      <h2>Modern lightweight architecture</h2>
+      <ul>
+        <li>Frontend: HTML5, Tailwind CSS, Lucide icons, Chart.js</li>
+        <li>Auth &amp; database: Firebase Authentication + Firestore</li>
+        <li>Files: Cloudinary (licenses, CVs, result images, payment screenshots)</li>
+        <li>State sync: localStorage + real-time Firestore; secure role-matched login</li>
+      </ul>
+    </section>
+
+    <section class="slide title-slide" data-n="7">
+      <h1>Summary &amp; Uses</h1>
+      <h2>PharmaCare in practice</h2>
+      <ul style="text-align:left">
+        <li>Digital onboarding for licensed pharmacies and pharmacists</li>
+        <li>Safe patient ordering only after verified doctor results</li>
+        <li>Admin governance of pharmacy quality on the platform</li>
+        <li>Foundation for telepharmacy, analytics &amp; mobile expansion</li>
+      </ul>
+      <p class="footer">Thank you | PharmaCare Team | Slide 7 of 7</p>
+    </section>
+  </div>
+
+  <div class="nav">
+    <button type="button" id="prev">← Prev</button>
+    <span id="counter">1 / 7</span>
+    <button type="button" id="next">Next →</button>
+  </div>
+
+  <script>
+    const slides = [...document.querySelectorAll('.slide')];
+    let i = 0;
+    const counter = document.getElementById('counter');
+    function show(n) {
+      i = (n + slides.length) % slides.length;
+      slides.forEach((s, j) => s.classList.toggle('active', j === i));
+      counter.textContent = (i + 1) + ' / 7';
+    }
+    document.getElementById('prev').onclick = () => show(i - 1);
+    document.getElementById('next').onclick = () => show(i + 1);
+    document.onkeydown = (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ') show(i + 1);
+      if (e.key === 'ArrowLeft') show(i - 1);
+    };
+  </script>
+</body>
+</html>
